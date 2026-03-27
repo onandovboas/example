@@ -76,10 +76,10 @@ incoterms_list = ["EXW", "FCA", "FOB", "CPT", "CIP", "CFR", "CIF", "Not Applicab
 for spec in specs:
     with st.expander(f"Specification: {spec}", expanded=False):
         c1, c2, c3, c4 = st.columns(4)
-        with c1: st.selectbox("Currency", currencies, key=f"curr_{spec}")
+        with c1: st.selectbox("Currency", currencies, key=f"curr_{spec}", index=None)
         with c2: st.number_input("Price for Development Phase (/ kg)", min_value=0.0, format="%.2f", key=f"dev_{spec}")
         with c3: st.number_input("Price for Commercial Phase (/ kg)", min_value=0.0, format="%.2f", key=f"com_{spec}")
-        with c4: st.selectbox("Incoterm", incoterms_list, key=f"inco_spec_{spec}")
+        with c4: st.selectbox("Incoterm", incoterms_list, key=f"inco_spec_{spec}", index=None)
 
 st.subheader("Part 2 - Operations")
 direct_ent = st.radio("Does the manufacturer accept to negotiate and work directly with our enterprise?", ["Yes", "No"])
