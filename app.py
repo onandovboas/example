@@ -106,7 +106,7 @@ with c_a:
 with c_b: 
     transit_time = st.number_input("Transit Time (from origin to the final destiny) (days)", min_value=0, step=1)
 with c_c: 
-    incoterm_gen = st.selectbox("Incoterm (General)", incoterms_list)
+    incoterm_gen = st.selectbox("Incoterm (General)", incoterms_list, index=None, help="In case the specification was declared by e-mail")
 
 c_d, c_e = st.columns(2)
 with c_d: pay_term_dev = st.number_input("Payment terms for Development Phase (days)", min_value=0, step=1)
